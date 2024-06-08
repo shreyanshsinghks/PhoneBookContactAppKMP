@@ -1,4 +1,4 @@
-package org.example.dice
+package database
 
 import App
 import android.os.Bundle
@@ -12,13 +12,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            val dao = getDatabaseBuilder(applicationContext)
+            App(dao)
         }
     }
-}
-
-@Preview
-@Composable
-fun AppAndroidPreview() {
-    App()
 }
